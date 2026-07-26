@@ -1,8 +1,15 @@
-CyberShield/
-│── index.html
-│── about.html
-│── tips.html
-│── contact.html
-│── style.css
-│── script.js
-│── images/
+Bangladesh-Smart-Services/
+│
+├── index.html
+├── about.html
+├── services.html
+├── contact.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── assets/
+│   ├── logo.png
+│   ├── hero-bg.jpg
+│   └── icons/
+└── README.md
