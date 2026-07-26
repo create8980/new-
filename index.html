@@ -1,73 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>CyberShield | Cyber Security Solutions</title>
-
-    <meta name="description"
-        content="CyberShield - Professional Cyber Security, Ethical Hacking, Penetration Testing, Network Security and Cloud Security Services.">
+    <title>Bangladesh Smart Services</title>
 
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 <body>
 
 <!-- Loader -->
-
 <div id="loader">
-
-    <h1>CYBER SHIELD</h1>
-
+    <div class="spinner"></div>
 </div>
 
 <!-- Header -->
-
 <header>
 
-<div class="logo">
+    <div class="logo">
+        🇧🇩 Bangladesh <span>Smart Services</span>
+    </div>
 
-<i class="fa-solid fa-shield-halved"></i>
+    <nav id="navbar">
 
-CyberShield
+        <a href="index.html" class="active">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
 
-</div>
+    </nav>
 
-<nav>
-
-<a href="#">Home</a>
-
-<a href="#about">About</a>
-
-<a href="#services">Services</a>
-
-<a href="#stats">Statistics</a>
-
-<a href="#team">Team</a>
-
-<a href="#contact">Contact</a>
-
-</nav>
-
-<button id="themeBtn">
-
-🌙
-
-</button>
+    <div class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
 
 </header>
 
@@ -75,41 +43,163 @@ CyberShield
 
 <section class="hero">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<h4>Professional Cyber Security Company</h4>
+        <h1>Welcome to Bangladesh Smart Services</h1>
 
-<h1>
+        <p>
+            All Bangladesh Government Services
+            in one Smart Platform.
+        </p>
 
-Protect Your Digital Future
+        <div class="search-box">
 
-</h1>
+            <input
+            type="text"
+            id="search"
+            placeholder="Search Government Services...">
+
+            <button>
+                <i class="fas fa-search"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Categories -->
+
+<section class="categories">
+
+<h2>Popular Government Services</h2>
+
+<div class="card-container">
+
+<div class="card">
+
+<i class="fas fa-id-card"></i>
+
+<h3>NID Services</h3>
 
 <p>
-
-CyberShield provides Enterprise Cyber Security,
-Penetration Testing,
-Network Protection,
-Cloud Security,
-Malware Analysis,
-Ethical Hacking
-and Security Consulting.
-
+National ID related services.
 </p>
 
-<div class="hero-buttons">
+<a href="#">View</a>
 
-<a href="#services" class="btn">
+</div>
 
-Our Services
+<div class="card">
 
-</a>
+<i class="fas fa-passport"></i>
 
-<a href="#contact" class="btn btn-outline">
+<h3>E-Passport</h3>
 
-Contact Us
+<p>
+Passport application & tracking.
+</p>
 
-</a>
+<a href="#">View</a>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-baby"></i>
+
+<h3>Birth Registration</h3>
+
+<p>
+Birth certificate services.
+</p>
+
+<a href="#">View</a>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-car"></i>
+
+<h3>BRTA</h3>
+
+<p>
+Driving License & Vehicle.
+</p>
+
+<a href="#">View</a>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-map"></i>
+
+<h3>Land Services</h3>
+
+<p>
+Land records & mutation.
+</p>
+
+<a href="#">View</a>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-money-check-dollar"></i>
+
+<h3>e-Challan</h3>
+
+<p>
+Online Government Payment.
+</p>
+
+<a href="#">View</a>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-file-invoice-dollar"></i>
+
+<h3>TIN & Tax</h3>
+
+<p>
+Income Tax Services.
+</p>
+
+<a href="#">View</a>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-user-doctor"></i>
+
+<h3>Health Services</h3>
+
+<p>
+Government Health Portal.
+</p>
+
+<a href="#">View</a>
+
+</div>
+
+<div class="card">
+
+<i class="fas fa-graduation-cap"></i>
+
+<h3>Education</h3>
+
+<p>
+Board Results & Admission.
+</p>
+
+<a href="#">View</a>
 
 </div>
 
@@ -117,134 +207,35 @@ Contact Us
 
 </section>
 
-<!-- Terminal -->
+<!-- Emergency -->
 
-<section class="terminal">
+<section class="emergency">
 
-<div class="terminal-header">
+<h2>Emergency Numbers</h2>
 
-<span class="dot red"></span>
-
-<span class="dot yellow"></span>
-
-<span class="dot green"></span>
-
-<p>root@cybershield:~</p>
-
-</div>
-
-<div class="terminal-body">
-
-<p>
-
-<span class="prompt">$</span>
-
-nmap -A example.com
-
-</p>
-
-<p class="success">
-
-✔ Host is up
-
-</p>
-
-<p class="success">
-
-✔ Port 22 SSH Open
-
-</p>
-
-<p class="success">
-
-✔ Port 80 HTTP Open
-
-</p>
-
-<p class="success">
-
-✔ Port 443 HTTPS Open
-
-</p>
-
-<p class="warning">
-
-Scanning Vulnerabilities...
-
-</p>
-
-<p>
-
-<span class="prompt">$</span>
-
-<span class="cursor"></span>
-
-</p>
-
-</div>
-
-</section>
-
-<!-- About -->
-
-<section id="about">
-
-<h2 class="title">
-
-About Us
-
-</h2>
-
-<div class="about-box">
+<div class="emergency-box">
 
 <div>
 
-<h3>
+<h3>999</h3>
 
-Who We Are
-
-</h3>
-
-<p>
-
-CyberShield is a professional cyber security company dedicated to protecting businesses from cyber threats.
-
-</p>
+<p>National Emergency Service</p>
 
 </div>
 
 <div>
 
-<h3>
+<h3>333</h3>
 
-Our Mission
-
-</h3>
-
-<p>
-
-Our mission is to provide secure, reliable and affordable cyber security solutions.
-
-</p>
+<p>Government Information</p>
 
 </div>
 
 <div>
 
-<h3>
+<h3>109</h3>
 
-Why Choose Us
-
-</h3>
-
-<p>
-
-Certified Experts,
-24/7 Support,
-Advanced Threat Detection,
-Modern Technologies.
-
-</p>
+<p>Women & Children Help</p>
 
 </div>
 
@@ -252,227 +243,21 @@ Modern Technologies.
 
 </section>
 
-<!-- Services -->
+<!-- Notice -->
 
-<section id="services">
+<section class="notice">
 
-<h2 class="title">
+<h2>Latest Notices</h2>
 
-Our Services
+<div class="notice-box">
 
-</h2>
+<marquee behavior="scroll" direction="left">
 
-<div class="cards">
+Welcome to Bangladesh Smart Services. Always verify information through the official government websites before submitting applications or making payments.
 
-<div class="card">
-
-<i class="fa-solid fa-user-secret"></i>
-
-<h3>Ethical Hacking</h3>
-
-<p>
-
-Professional penetration testing.
-
-</p>
+</marquee>
 
 </div>
-
-<div class="card">
-
-<i class="fa-solid fa-network-wired"></i>
-
-<h3>Network Security</h3>
-
-<p>
-
-Enterprise firewall protection.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-cloud"></i>
-
-<h3>Cloud Security</h3>
-
-<p>
-
-AWS Azure Google Cloud Security.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-lock"></i>
-
-<h3>Data Protection</h3>
-
-<p>
-
-Encryption & Backup.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-bug"></i>
-
-<h3>Malware Analysis</h3>
-
-<p>
-
-Threat Detection.
-
-</p>
-
-</div>
-
-<div class="card">
-
-<i class="fa-solid fa-shield-virus"></i>
-
-<h3>Security Audit</h3>
-
-<p>
-
-Website Security Assessment.
-
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Statistics -->
-
-<section id="stats">
-
-<h2 class="title">
-
-Our Statistics
-
-</h2>
-
-<div class="stats">
-
-<div class="stat">
-
-<h2>350+</h2>
-
-<p>Projects</p>
-
-</div>
-
-<div class="stat">
-
-<h2>120+</h2>
-
-<p>Clients</p>
-
-</div>
-
-<div class="stat">
-
-<h2>99%</h2>
-
-<p>Success Rate</p>
-
-</div>
-
-<div class="stat">
-
-<h2>24/7</h2>
-
-<p>Monitoring</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Team -->
-
-<section id="team">
-
-<h2 class="title">
-
-Our Experts
-
-</h2>
-
-<div class="cards">
-
-<div class="card">
-
-<img src="images/team1.jpg">
-
-<h3>John Carter</h3>
-
-<p>Security Analyst</p>
-
-</div>
-
-<div class="card">
-
-<img src="images/team2.jpg">
-
-<h3>Sarah Wilson</h3>
-
-<p>Pen Tester</p>
-
-</div>
-
-<div class="card">
-
-<img src="images/team3.jpg">
-
-<h3>David Smith</h3>
-
-<p>Cloud Security</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Contact -->
-
-<section id="contact">
-
-<h2 class="title">
-
-Contact Us
-
-</h2>
-
-<form>
-
-<input type="text" placeholder="Full Name">
-
-<input type="email" placeholder="Email Address">
-
-<input type="text" placeholder="Subject">
-
-<textarea placeholder="Write your message..."></textarea>
-
-<button>
-
-Send Message
-
-</button>
-
-</form>
 
 </section>
 
@@ -480,42 +265,33 @@ Send Message
 
 <footer>
 
-<h2>
-
-CyberShield
-
-</h2>
-
 <p>
 
-Protecting Your Digital Future.
+© 2026 Bangladesh Smart Services
 
 </p>
 
 <div class="social">
 
-<i class="fab fa-facebook-f"></i>
+<a href="#"><i class="fab fa-facebook"></i></a>
 
-<i class="fab fa-github"></i>
+<a href="#"><i class="fab fa-youtube"></i></a>
 
-<i class="fab fa-linkedin"></i>
+<a href="#"><i class="fab fa-linkedin"></i></a>
 
-<i class="fab fa-instagram"></i>
-
-<i class="fab fa-x-twitter"></i>
+<a href="#"><i class="fab fa-github"></i></a>
 
 </div>
 
-<p>
-
-© 2026 CyberShield. All Rights Reserved.
-
-</p>
-
 </footer>
+
+<button id="topBtn">
+
+<i class="fas fa-arrow-up"></i>
+
+</button>
 
 <script src="js/script.js"></script>
 
 </body>
-
 </html>
