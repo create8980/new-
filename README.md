@@ -1,20 +1,25 @@
-CyberShield/
-│── index.html
-│── about.html
-│── services.html
-│── threats.html
-│── contact.html
-│── css/
-│     ├── style.css
-│     ├── responsive.css
-│     └── animation.css
+CyberShield-Pro/
 │
-│── js/
-│     ├── script.js
-│     ├── matrix.js
-│     ├── typing.js
-│     └── counter.js
+├── index.html
+├── about.html
+├── services.html
+├── threats.html
+├── contact.html
+├── 404.html
 │
-│── images/
-│── assets/
-│── README.md
+├── css/
+│   ├── style.css
+│   ├── responsive.css
+│   └── animation.css
+│
+├── js/
+│   ├── script.js
+│   ├── matrix.js
+│   └── typing.js
+│
+├── images/
+├── assets/
+├── README.md
+├── LICENSE
+├── robots.txt
+└── sitemap.xml
