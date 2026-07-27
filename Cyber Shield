@@ -1,10 +1,11 @@
-CyberShield/
+CyberShield-Pro/
 │
 ├── index.html
 ├── about.html
 ├── services.html
 ├── threats.html
 ├── contact.html
+├── 404.html
 │
 ├── css/
 │   ├── style.css
@@ -12,21 +13,13 @@ CyberShield/
 │   └── animation.css
 │
 ├── js/
-│   └── script.js
+│   ├── script.js
+│   ├── matrix.js
+│   └── typing.js
 │
 ├── images/
-│   ├── logo.png
-│   ├── hero.png
-│   ├── about.png
-│   ├── team1.jpg
-│   ├── team2.jpg
-│   ├── team3.jpg
-│   ├── threat1.jpg
-│   └── bg.jpg
-│
 ├── assets/
-│   ├── favicon.ico
-│   └── fonts/
-│
 ├── README.md
-└── LICENSE
+├── LICENSE
+├── robots.txt
+└── sitemap.xml
