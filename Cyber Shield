@@ -1,15 +1,32 @@
-Bangladesh-Smart-Services/
+CyberShield/
 │
 ├── index.html
 ├── about.html
 ├── services.html
+├── threats.html
 ├── contact.html
+│
 ├── css/
-│   └── style.css
+│   ├── style.css
+│   ├── responsive.css
+│   └── animation.css
+│
 ├── js/
 │   └── script.js
-├── assets/
+│
+├── images/
 │   ├── logo.png
-│   ├── hero-bg.jpg
-│   └── icons/
-└── README.md
+│   ├── hero.png
+│   ├── about.png
+│   ├── team1.jpg
+│   ├── team2.jpg
+│   ├── team3.jpg
+│   ├── threat1.jpg
+│   └── bg.jpg
+│
+├── assets/
+│   ├── favicon.ico
+│   └── fonts/
+│
+├── README.md
+└── LICENSE
