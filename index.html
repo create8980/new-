@@ -1,820 +1,908 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>CyberShield | Professional Cyber Security</title>
+  <title>Travel Paradise | Hotel Booking & Travel Agency</title>
 
-  <meta name="description"
-    content="CyberShield - Professional Cyber Security, Ethical Hacking, Penetration Testing, Network Security and Cloud Security Solutions.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-  <meta name="keywords"
-    content="Cyber Security, Ethical Hacking, Penetration Testing, Network Security, Cloud Security">
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background: #f7f9fc;
+      line-height: 1.6;
+    }
 
-  <meta name="author" content="CyberShield">
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
 
-  <link rel="stylesheet" href="css/style.css">
+    /* Navbar */
+    .navbar {
+      width: 100%;
+      background: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 7%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #0077b6;
+    }
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    .logo span {
+      color: #ff7b00;
+    }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    .nav-links a {
+      font-weight: 600;
+      transition: 0.3s;
+    }
 
+    .nav-links a:hover {
+      color: #0077b6;
+    }
+
+    .menu-btn {
+      display: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 650px;
+      background:
+        linear-gradient(rgba(0, 40, 70, 0.58), rgba(0, 40, 70, 0.58)),
+        url("https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=80")
+        center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #ffb703;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 28px;
+      background: #ff7b00;
+      color: white;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #e56700;
+      transform: translateY(-2px);
+    }
+
+    .btn-blue {
+      background: #0077b6;
+    }
+
+    .btn-blue:hover {
+      background: #005f91;
+    }
+
+    /* Booking Search */
+    .booking-box {
+      width: 86%;
+      max-width: 1100px;
+      margin: -55px auto 60px;
+      position: relative;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 35px rgba(0,0,0,0.15);
+    }
+
+    .booking-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #0077b6;
+    }
+
+    .booking-form {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .input-group label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #ddd;
+      border-radius: 7px;
+      outline: none;
+    }
+
+    /* Section */
+    section {
+      padding: 70px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #0077b6;
+      margin-bottom: 8px;
+    }
+
+    .section-title p {
+      color: #666;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 14px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .service-icon {
+      font-size: 45px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+      color: #0077b6;
+    }
+
+    .service-card p {
+      color: #666;
+    }
+
+    /* Hotels */
+    .hotels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .hotel-card {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .hotel-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .hotel-info {
+      padding: 22px;
+    }
+
+    .hotel-info h3 {
+      color: #0077b6;
+      margin-bottom: 7px;
+    }
+
+    .rating {
+      color: #ff9d00;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 21px;
+      font-weight: bold;
+      margin: 10px 0 18px;
+    }
+
+    /* About */
+    .about {
+      background: white;
+    }
+
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .about h2 {
+      font-size: 38px;
+      color: #0077b6;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    /* Packages */
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .package {
+      background: white;
+      border-radius: 14px;
+      padding: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .package h3 {
+      color: #0077b6;
+      margin-bottom: 10px;
+    }
+
+    .package ul {
+      padding-left: 20px;
+      margin: 15px 0;
+    }
+
+    /* Contact */
+    .contact {
+      background: #eef7fb;
+    }
+
+    .contact-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .contact-info h3 {
+      color: #0077b6;
+      margin-bottom: 15px;
+      font-size: 27px;
+    }
+
+    .contact-info p {
+      margin: 12px 0;
+    }
+
+    .contact-form {
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 7px;
+      outline: none;
+    }
+
+    .contact-form textarea {
+      height: 130px;
+      resize: none;
+    }
+
+    /* Footer */
+    footer {
+      background: #06283d;
+      color: white;
+      padding: 45px 7% 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 30px;
+    }
+
+    footer h3 {
+      margin-bottom: 15px;
+      color: #ffb703;
+    }
+
+    footer p {
+      color: #d7e6ee;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin: 8px 0;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid rgba(255,255,255,0.15);
+      padding-top: 20px;
+      color: #bbb;
+    }
+
+    /* WhatsApp */
+    .whatsapp {
+      position: fixed;
+      right: 25px;
+      bottom: 25px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      z-index: 999;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 220px;
+        padding: 20px;
+        flex-direction: column;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .booking-form,
+      .services,
+      .hotels,
+      .packages {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .about-container,
+      .contact-container,
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .hero {
+        min-height: 550px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .booking-form,
+      .services,
+      .hotels,
+      .packages {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 50px 5%;
+      }
+
+      .booking-box {
+        width: 92%;
+        padding: 20px;
+      }
+
+      .section-title h2 {
+        font-size: 29px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- ================= Loader ================= -->
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Travel<span>Paradise</span></div>
 
-<div id="loader">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#hotels">Hotels</a></li>
+      <li><a href="#packages">Packages</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-    <div class="loader-content">
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  </nav>
 
-        <img src="images/logo.png" class="loader-logo">
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Explore The World With <span>Us</span></h1>
 
-        <h1>CYBERSHIELD</h1>
+      <p>
+        Easy Hotel Booking, Flight Booking, Visa Processing
+        & Complete Travel Solutions
+      </p>
 
-        <span>Loading Security System...</span>
+      <a href="#hotels" class="btn">Find Your Hotel</a>
+      <a href="#contact" class="btn btn-blue">Contact Us</a>
+    </div>
+  </section>
 
+  <!-- Hotel Search -->
+  <div class="booking-box">
+
+    <h2>🏨 Search & Book Your Hotel</h2>
+
+    <form class="booking-form" onsubmit="searchHotel(event)">
+
+      <div class="input-group">
+        <label>Destination</label>
+        <input type="text" id="destination" placeholder="e.g. Cox's Bazar" required>
+      </div>
+
+      <div class="input-group">
+        <label>Check-in</label>
+        <input type="date" required>
+      </div>
+
+      <div class="input-group">
+        <label>Check-out</label>
+        <input type="date" required>
+      </div>
+
+      <div class="input-group">
+        <label>Guests</label>
+        <select>
+          <option>1 Guest</option>
+          <option>2 Guests</option>
+          <option>3 Guests</option>
+          <option>4 Guests</option>
+          <option>5+ Guests</option>
+        </select>
+      </div>
+
+      <button class="btn" type="submit">Search Hotels</button>
+
+    </form>
+  </div>
+
+  <!-- Services -->
+  <section id="services">
+
+    <div class="section-title">
+      <h2>Our Services</h2>
+      <p>Everything you need for a comfortable journey</p>
     </div>
 
-</div>
-
-<!-- Matrix Canvas -->
-
-<canvas id="matrix"></canvas>
-
-<!-- ================= Header ================= -->
-
-<header id="header">
-
-<div class="container">
-
-<div class="logo">
-
-<a href="index.html">
-
-<img src="images/logo.png" alt="Logo">
-
-<span>CyberShield</span>
-
-</a>
-
-</div>
-
-<nav>
-
-<ul>
-
-<li><a href="index.html" class="active">Home</a></li>
-
-<li><a href="about.html">About</a></li>
-
-<li><a href="services.html">Services</a></li>
-
-<li><a href="threats.html">Threats</a></li>
-
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<div class="header-buttons">
-
-<button id="themeBtn">
-
-<i class="fa-solid fa-moon"></i>
-
-</button>
-
-<div id="menuBtn">
-
-<i class="fa-solid fa-bars"></i>
-
-</div>
-
-</div>
-
-</div>
-
-</header>
-
-<!-- ================= Hero ================= -->
-
-<section class="hero">
-
-<div class="container hero-grid">
-
-<div class="hero-left">
-
-<h5>
-
-WELCOME TO CYBERSHIELD
-
-</h5>
-
-<h1>
-
-Protect Your Digital
-
-<span>
-
-Future
-
-</span>
-
-</h1>
-
-<div class="typing">
-
-<span id="typing"></span>
-
-</div>
-
-<p>
-
-CyberShield provides world-class Cyber Security,
-Ethical Hacking,
-Cloud Security,
-Penetration Testing,
-Digital Forensics,
-Malware Analysis,
-SOC Monitoring,
-Incident Response
-and Security Consulting.
-
-</p>
-
-<div class="hero-btns">
-
-<a href="services.html" class="btn">
-
-Explore Services
-
-</a>
-
-<a href="contact.html" class="btn btn-outline">
-
-Free Consultation
-
-</a>
-
-</div>
-
-<div class="hero-info">
-
-<div>
-
-<h2>
-
-350+
-
-</h2>
-
-<p>
-
-Projects
-
-</p>
-
-</div>
-
-<div>
-
-<h2>
-
-120+
-
-</h2>
-
-<p>
-
-Clients
-
-</p>
-
-</div>
-
-<div>
-
-<h2>
-
-99%
-
-</h2>
-
-<p>
-
-Success Rate
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="hero-right">
-
-<img src="images/hero.png" alt="Cyber Security">
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= Terminal ================= -->
-
-<section class="terminal-section">
-
-<div class="container">
-
-<div class="terminal">
-
-<div class="terminal-header">
-
-<div class="dots">
-
-<span class="red"></span>
-
-<span class="yellow"></span>
-
-<span class="green"></span>
-
-</div>
-
-<p>
-
-root@cybershield:~
-
-</p>
-
-</div>
-
-<div class="terminal-body">
-
-<p>
-
-<span class="green-text">
-
-root@server:~
-
-</span>
-
-$
-
-nmap -A cybershield.com
-
-</p>
-
-<p>
-
-Scanning target...
-
-</p>
-
-<p>
-
-✔ Host Online
-
-</p>
-
-<p>
-
-✔ Port 22 SSH Open
-
-</p>
-
-<p>
-
-✔ Port 80 HTTP Open
-
-</p>
-
-<p>
-
-✔ Port 443 HTTPS Open
-
-</p>
-
-<p>
-
-✔ Firewall Detected
-
-</p>
-
-<p>
-
-<span class="green-text">
-
-root@server:~
-
-</span>
-
-$
-
-<span class="cursor"></span>
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- About Section starts below in Part 2 --> 
-  <!-- ================= ABOUT ================= -->
-
-<section id="about" class="about">
-
-<div class="container">
-
-<h2 class="section-title">About CyberShield</h2>
-
-<p class="section-subtitle">
-We help businesses and individuals stay protected against modern cyber threats.
-</p>
-
-<div class="about-grid">
-
-<div class="about-image">
-<img src="images/about.png" alt="About CyberShield">
-</div>
-
-<div class="about-content">
-
-<h3>Professional Cyber Security Company</h3>
-
-<p>
-CyberShield delivers enterprise-grade cyber security solutions including
-ethical hacking, penetration testing, cloud security, SOC monitoring,
-digital forensics, malware analysis and incident response.
-</p>
-
-<div class="about-features">
-
-<div class="feature">
-<i class="fa-solid fa-shield-halved"></i>
-<span>Enterprise Security</span>
-</div>
-
-<div class="feature">
-<i class="fa-solid fa-lock"></i>
-<span>Data Protection</span>
-</div>
-
-<div class="feature">
-<i class="fa-solid fa-cloud"></i>
-<span>Cloud Security</span>
-</div>
-
-<div class="feature">
-<i class="fa-solid fa-user-secret"></i>
-<span>Ethical Hacking</span>
-</div>
-
-</div>
-
-<a href="about.html" class="btn">
-Read More
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= SERVICES ================= -->
-
-<section id="services" class="services">
-
-<div class="container">
-
-<h2 class="section-title">Our Services</h2>
-
-<div class="service-grid">
-
-<div class="service-card">
-<i class="fa-solid fa-user-secret"></i>
-<h3>Ethical Hacking</h3>
-<p>Professional penetration testing and vulnerability assessment.</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-network-wired"></i>
-<h3>Network Security</h3>
-<p>Firewall configuration and enterprise network protection.</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-cloud"></i>
-<h3>Cloud Security</h3>
-<p>AWS, Azure and Google Cloud security services.</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-lock"></i>
-<h3>Data Protection</h3>
-<p>Encryption, backup and ransomware protection.</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-bug"></i>
-<h3>Malware Analysis</h3>
-<p>Detect and remove advanced malware threats.</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-server"></i>
-<h3>SOC Monitoring</h3>
-<p>24/7 Security Operations Center monitoring.</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-magnifying-glass"></i>
-<h3>Security Audit</h3>
-<p>Complete infrastructure security assessment.</p>
-</div>
-
-<div class="service-card">
-<i class="fa-solid fa-shield-virus"></i>
-<h3>Incident Response</h3>
-<p>Rapid response to cyber attacks and recovery.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= WHY CHOOSE US ================= -->
-
-<section class="why-us">
-
-<div class="container">
-
-<h2 class="section-title">
-Why Choose CyberShield?
-</h2>
-
-<div class="why-grid">
-
-<div class="why-card">
-
-<i class="fa-solid fa-award"></i>
-
-<h3>Certified Experts</h3>
-
-<p>
-Experienced cyber security professionals with industry certifications.
-</p>
-
-</div>
-
-<div class="why-card">
-
-<i class="fa-solid fa-clock"></i>
-
-<h3>24/7 Support</h3>
-
-<p>
-Our experts monitor and protect your systems around the clock.
-</p>
-
-</div>
-
-<div class="why-card">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-<h3>Advanced Protection</h3>
-
-<p>
-Modern technologies to defend against evolving cyber threats.
-</p>
-
-</div>
-
-<div class="why-card">
-
-<i class="fa-solid fa-headset"></i>
-
-<h3>Customer Focus</h3>
-
-<p>
-Fast support and tailored security solutions for every client.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ================= CYBER THREATS ================= -->
-
-<section class="threats">
-
-<div class="container">
-
-<h2 class="section-title">
-
-Common Cyber Threats
-
-</h2>
-
-<div class="threat-grid">
-
-<div class="threat-card">
-
-<i class="fa-solid fa-fish"></i>
-
-<h3>Phishing</h3>
-
-<p>
-Fraudulent emails designed to steal sensitive information.
-</p>
-
-</div>
-
-<div class="threat-card">
-
-<i class="fa-solid fa-virus"></i>
-
-<h3>Malware</h3>
-
-<p>
-Malicious software that damages systems and steals data.
-</p>
-
-</div>
-
-<div class="threat-card">
-
-<i class="fa-solid fa-skull-crossbones"></i>
-
-<h3>Ransomware</h3>
-
-<p>
-Encrypts files and demands payment for recovery.
-</p>
-
-</div>
-
-<div class="threat-card">
-
-<i class="fa-solid fa-globe"></i>
-
-<h3>DDoS Attack</h3>
-
-<p>
-Flooding servers with traffic to disrupt services.
-</p>
-
-</div>
-
-<div class="threat-card">
-
-<i class="fa-solid fa-user-ninja"></i>
-
-<h3>Social Engineering</h3>
-
-<p>
-Manipulating users into revealing confidential information.
-</p>
-
-</div>
-
-<div class="threat-card">
-
-<i class="fa-solid fa-triangle-exclamation"></i>
-
-<h3>Zero-Day Exploit</h3>
-
-<p>
-Attacks targeting unknown software vulnerabilities.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Team Section starts in Part 3 -->
-<!-- ================= TEAM ================= -->
-
-<section id="team" class="team">
-
-    <div class="container">
-
-        <h2 class="section-title">Meet Our Experts</h2>
-
-        <div class="team-grid">
-
-            <div class="team-card">
-                <img src="images/team1.jpg" alt="John Carter">
-                <h3>John Carter</h3>
-                <p>Chief Security Officer</p>
-
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <img src="images/team2.jpg" alt="Sarah Wilson">
-                <h3>Sarah Wilson</h3>
-                <p>Senior Penetration Tester</p>
-
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-                </div>
-            </div>
-
-            <div class="team-card">
-                <img src="images/team3.jpg" alt="David Smith">
-                <h3>David Smith</h3>
-                <p>Cloud Security Engineer</p>
-
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-x-twitter"></i></a>
-                </div>
-            </div>
-
+    <div class="services">
+
+      <div class="service-card">
+        <div class="service-icon">🏨</div>
+        <h3>Hotel Booking</h3>
+        <p>Book hotels easily at attractive prices.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">✈️</div>
+        <h3>Flight Booking</h3>
+        <p>Domestic and international flight booking.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🛂</div>
+        <h3>Visa Processing</h3>
+        <p>Professional visa processing assistance.</p>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🚗</div>
+        <h3>Transport</h3>
+        <p>Airport pickup, drop-off and travel transport.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Hotels -->
+  <section id="hotels">
+
+    <div class="section-title">
+      <h2>Popular Hotels</h2>
+      <p>Choose your favorite destination and hotel</p>
+    </div>
+
+    <div class="hotels">
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=900&q=80">
+
+        <div class="hotel-info">
+          <h3>Luxury Beach Resort</h3>
+          <div class="rating">★★★★★</div>
+          <p>📍 Cox's Bazar, Bangladesh</p>
+          <div class="price">৳5,500 / Night</div>
+          <button class="btn" onclick="bookHotel('Luxury Beach Resort')">
+            Book Now
+          </button>
         </div>
+      </div>
 
-    </div>
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=900&q=80">
 
-</section>
-
-<!-- ================= STATISTICS ================= -->
-
-<section class="statistics">
-
-    <div class="container">
-
-        <div class="stats-grid">
-
-            <div class="stat-box">
-                <h2 class="counter" data-target="350">0</h2>
-                <p>Projects Completed</p>
-            </div>
-
-            <div class="stat-box">
-                <h2 class="counter" data-target="120">0</h2>
-                <p>Happy Clients</p>
-            </div>
-
-            <div class="stat-box">
-                <h2 class="counter" data-target="99">0</h2>
-                <p>Success Rate %</p>
-            </div>
-
-            <div class="stat-box">
-                <h2>24/7</h2>
-                <p>Monitoring</p>
-            </div>
-
+        <div class="hotel-info">
+          <h3>City Grand Hotel</h3>
+          <div class="rating">★★★★★</div>
+          <p>📍 Dhaka, Bangladesh</p>
+          <div class="price">৳4,500 / Night</div>
+          <button class="btn" onclick="bookHotel('City Grand Hotel')">
+            Book Now
+          </button>
         </div>
+      </div>
+
+      <div class="hotel-card">
+        <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=900&q=80">
+
+        <div class="hotel-info">
+          <h3>Mountain View Resort</h3>
+          <div class="rating">★★★★☆</div>
+          <p>📍 Bandarban, Bangladesh</p>
+          <div class="price">৳3,800 / Night</div>
+          <button class="btn" onclick="bookHotel('Mountain View Resort')">
+            Book Now
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about" id="about">
+
+    <div class="about-container">
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1000&q=80">
+      </div>
+
+      <div>
+        <h2>Travel With Confidence</h2>
+
+        <p>
+          Travel Paradise is a modern travel agency dedicated to
+          making your journey simple, safe and enjoyable.
+        </p>
+
+        <p>
+          We provide hotel booking, flight booking, visa assistance,
+          tour packages and complete travel solutions.
+        </p>
+
+        <a href="#contact" class="btn">Get In Touch</a>
+      </div>
 
     </div>
 
-</section>
+  </section>
 
-<!-- ================= CONTACT ================= -->
+  <!-- Packages -->
+  <section id="packages">
 
-<section id="contact" class="contact">
+    <div class="section-title">
+      <h2>Popular Tour Packages</h2>
+      <p>Discover amazing destinations with us</p>
+    </div>
 
-    <div class="container">
+    <div class="packages">
 
-        <h2 class="section-title">Contact Us</h2>
+      <div class="package">
+        <h3>🏖️ Cox's Bazar Tour</h3>
+        <p>3 Days / 2 Nights</p>
 
-        <form class="contact-form">
+        <ul>
+          <li>Hotel Accommodation</li>
+          <li>Breakfast</li>
+          <li>Local Transport</li>
+          <li>Tour Guide</li>
+        </ul>
 
-            <input type="text" placeholder="Your Name" required>
+        <button class="btn" onclick="bookPackage('Coxs Bazar Tour')">
+          Book Package
+        </button>
+      </div>
 
-            <input type="email" placeholder="Email Address" required>
+      <div class="package">
+        <h3>⛰️ Bandarban Tour</h3>
+        <p>3 Days / 2 Nights</p>
 
-            <input type="tel" placeholder="Phone Number">
+        <ul>
+          <li>Hotel Accommodation</li>
+          <li>Breakfast</li>
+          <li>Transport</li>
+          <li>Tour Guide</li>
+        </ul>
 
-            <textarea rows="6" placeholder="Your Message"></textarea>
+        <button class="btn" onclick="bookPackage('Bandarban Tour')">
+          Book Package
+        </button>
+      </div>
 
-            <button type="submit" class="btn">
-                Send Message
-            </button>
+      <div class="package">
+        <h3>🌊 Saint Martin Tour</h3>
+        <p>2 Days / 1 Night</p>
+
+        <ul>
+          <li>Resort Accommodation</li>
+          <li>Breakfast</li>
+          <li>Boat Ticket</li>
+          <li>Tour Support</li>
+        </ul>
+
+        <button class="btn" onclick="bookPackage('Saint Martin Tour')">
+          Book Package
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+
+    <div class="section-title">
+      <h2>Contact Us</h2>
+      <p>Ready to plan your next trip?</p>
+    </div>
+
+    <div class="contact-container">
+
+      <div class="contact-info">
+
+        <h3>Travel Paradise</h3>
+
+        <p>📍 Dhaka, Bangladesh</p>
+        <p>📞 +880 1700-000000</p>
+        <p>📧 info@travelparadise.com</p>
+        <p>🕒 Sat - Thu: 9:00 AM - 9:00 PM</p>
+
+        <br>
+
+        <p>
+          Contact us for hotel booking, flight booking,
+          visa processing and tour packages.
+        </p>
+
+      </div>
+
+      <div class="contact-form">
+
+        <form onsubmit="sendMessage(event)">
+
+          <input type="text" placeholder="Your Name" required>
+
+          <input type="tel" placeholder="Phone Number" required>
+
+          <input type="email" placeholder="Email Address">
+
+          <textarea placeholder="How can we help you?" required></textarea>
+
+          <button class="btn" type="submit">
+            Send Message
+          </button>
 
         </form>
 
-    </div>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-    <div class="container footer-grid">
-
-        <div>
-
-            <img src="images/logo.png" width="80" alt="Logo">
-
-            <h3>CyberShield</h3>
-
-            <p>
-                Protecting Your Digital Future with modern cyber security solutions.
-            </p>
-
-        </div>
-
-        <div>
-
-            <h4>Quick Links</h4>
-
-            <ul>
-
-                <li><a href="index.html">Home</a></li>
-
-                <li><a href="about.html">About</a></li>
-
-                <li><a href="services.html">Services</a></li>
-
-                <li><a href="threats.html">Threats</a></li>
-
-                <li><a href="contact.html">Contact</a></li>
-
-            </ul>
-
-        </div>
-
-        <div>
-
-            <h4>Follow Us</h4>
-
-            <div class="footer-social">
-
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                <a href="#"><i class="fab fa-instagram"></i></a>
-
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-
-                <a href="#"><i class="fab fa-github"></i></a>
-
-                <a href="#"><i class="fab fa-youtube"></i></a>
-
-            </div>
-
-        </div>
+      </div>
 
     </div>
 
-    <hr>
+  </section>
 
-    <p class="copyright">
-        © 2026 CyberShield. All Rights Reserved.
-    </p>
+  <!-- Footer -->
+  <footer>
 
-</footer>
+    <div class="footer-content">
 
-<!-- ================= BACK TO TOP ================= -->
+      <div>
+        <h3>Travel Paradise</h3>
 
-<button id="topBtn" title="Back to Top">
-    <i class="fa-solid fa-arrow-up"></i>
-</button>
+        <p>
+          Your trusted partner for hotel booking,
+          flight booking and complete travel solutions.
+        </p>
+      </div>
 
-<!-- ================= JAVASCRIPT ================= -->
+      <div>
+        <h3>Quick Links</h3>
 
-<script src="js/script.js"></script>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#hotels">Hotels</a></li>
+          <li><a href="#packages">Packages</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+
+        <p>📞 +880 1700-000000</p>
+        <p>📧 info@travelparadise.com</p>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 Travel Paradise. All Rights Reserved.
+    </div>
+
+  </footer>
+
+  <!-- WhatsApp -->
+  <a
+    class="whatsapp"
+    href="https://wa.me/8801700000000"
+    target="_blank"
+    title="Chat on WhatsApp">
+    ☎
+  </a>
+
+  <script>
+
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+
+    function searchHotel(event) {
+      event.preventDefault();
+
+      const destination =
+        document.getElementById("destination").value;
+
+      alert(
+        "Searching hotels in " +
+        destination +
+        ".\n\nConnect this form to your hotel booking system/API to show real-time hotel availability."
+      );
+    }
+
+    function bookHotel(hotelName) {
+
+      const phone = "8801700000000";
+
+      const message =
+        "Hello Travel Paradise,%0A%0AI want to book: " +
+        hotelName;
+
+      window.open(
+        "https://wa.me/" + phone + "?text=" + message,
+        "_blank"
+      );
+    }
+
+    function bookPackage(packageName) {
+
+      const phone = "8801700000000";
+
+      const message =
+        "Hello Travel Paradise,%0A%0AI am interested in the " +
+        packageName +
+        ".";
+
+      window.open(
+        "https://wa.me/" + phone + "?text=" + message,
+        "_blank"
+      );
+    }
+
+    function sendMessage(event) {
+
+      event.preventDefault();
+
+      alert(
+        "Thank you! Your message has been received."
+      );
+    }
+
+  </script>
 
 </body>
 </html>
