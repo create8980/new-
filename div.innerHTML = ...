@@ -1,0 +1,70 @@
+div.innerHTML = `
+
+  <strong>
+    ${escapeHTML(data.item || "")}
+  </strong>
+
+  ${
+    data.type === "International Flight"
+    ? `
+      <p>
+        ✈️ Airline:
+        ${escapeHTML(data.airline || "")}
+      </p>
+
+      <p>
+        Flight:
+        ${escapeHTML(data.flightNumber || "")}
+      </p>
+
+      <p>
+        Route:
+        ${escapeHTML(data.from || "")}
+        →
+        ${escapeHTML(data.to || "")}
+      </p>
+
+      <p>
+        Departure:
+        ${escapeHTML(data.departure || "")}
+      </p>
+
+      ${
+        data.returnDate
+        ? `
+          <p>
+            Return:
+            ${escapeHTML(data.returnDate)}
+          </p>
+        `
+        : ""
+      }
+
+      <p>
+        Class:
+        ${escapeHTML(data.cabinClass || "Economy")}
+      </p>
+
+      <p>
+        Passengers:
+        ${data.guests || 1}
+      </p>
+    `
+    : `
+      <p>
+        Date:
+        ${escapeHTML(data.date || "")}
+      </p>
+
+      <p>
+        Guests:
+        ${data.guests || 1}
+      </p>
+    `
+  }
+
+  <span class="status">
+    ${escapeHTML(data.status || "Pending")}
+  </span>
+
+`;
