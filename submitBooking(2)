@@ -1,0 +1,150 @@
+window.submitBooking = async function(){
+
+  if(!currentUser){
+
+    closeModals();
+    openLogin();
+
+    showToast(
+      "Please login before booking."
+    );
+
+    return;
+  }
+
+
+  const name =
+    document
+      .getElementById("bookingName")
+      .value.trim();
+
+  const phone =
+    document
+      .getElementById("bookingPhone")
+      .value.trim();
+
+  const date =
+    document
+      .getElementById("bookingDate")
+      .value;
+
+  const guests =
+    document
+      .getElementById("bookingGuests")
+      .value;
+
+  const passport =
+    document
+      .getElementById("bookingPassport")
+      .value.trim();
+
+  const dob =
+    document
+      .getElementById("bookingDOB")
+      .value;
+
+
+  if(!name || !phone || !date){
+
+    showToast(
+      "Please complete all booking fields."
+    );
+
+    return;
+  }
+
+
+  try{
+
+    let bookingData = {
+
+      uid:currentUser.uid,
+
+      email:currentUser.email,
+
+      customerName:name,
+
+      phone:phone,
+
+      item:selectedBooking,
+
+      date:date,
+
+      guests:Number(guests),
+
+      passport:passport,
+
+      dateOfBirth:dob,
+
+      status:"Pending",
+
+      createdAt:
+        serverTimestamp()
+
+    };
+
+
+    /* FLIGHT BOOKING */
+
+    if(selectedFlight){
+
+      bookingData.type =
+        "International Flight";
+
+      bookingData.airline =
+        selectedFlight.airline;
+
+      bookingData.flightNumber =
+        selectedFlight.code;
+
+      bookingData.from =
+        selectedFlight.from;
+
+      bookingData.to =
+        selectedFlight.to;
+
+      bookingData.departure =
+        selectedFlight.departure;
+
+      bookingData.returnDate =
+        selectedFlight.returnDate || "";
+
+      bookingData.cabinClass =
+        selectedFlight.flightClass;
+
+      bookingData.ticketPrice =
+        selectedFlight.price;
+
+    }
+
+
+    await addDoc(
+      collection(db,"bookings"),
+      bookingData
+    );
+
+
+    closeModals();
+
+    selectedFlight = null;
+
+
+    showToast(
+      "Booking request submitted successfully!"
+    );
+
+
+    loadBookings();
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    showToast(
+      "Could not save booking."
+    );
+
+  }
+
+};
